@@ -20,7 +20,7 @@ function WeatherReport({ weatherResult, isLoad, notFound, errorMsg }) {
     '03d':cloud,
     '04d':cloudy,
     '09d':slow_rain,
-    '10d': rain_d,
+    '10d':rain_d,
     '11d':storm,
     '13d':snow,
     '50d':mist,
@@ -64,7 +64,7 @@ function WeatherReport({ weatherResult, isLoad, notFound, errorMsg }) {
               />
             </div>
             <div className="basic">
-              <p className="temp">{weatherResult.main.temp}°C</p>
+              <p className="temp">{Math.floor(weatherResult.main.temp)}°C</p>
               <h2 className="cityname">
                 {weatherResult.name}
                 <span>({weatherResult.sys.country})</span>
@@ -77,7 +77,7 @@ function WeatherReport({ weatherResult, isLoad, notFound, errorMsg }) {
                 <p>{weatherResult.coord.lat}</p>
               </div>
               <div>
-                <span>Longtitude</span>
+                <span>Longitude</span>
                 <p>{weatherResult.coord.lon}</p>
               </div>
             </div>
@@ -99,14 +99,3 @@ function WeatherReport({ weatherResult, isLoad, notFound, errorMsg }) {
 }
 
 export default WeatherReport;
-
-
-// .png 	.png 	clear sky
-// .png 	.png 	few clouds
-// .png 	.png 	scattered clouds
-// .png 	.png 	broken clouds
-// .png 	.png 	shower rain
-// .png 	.png 	rain
-// .png 	.png 	thunderstorm
-// .png 	.png 	snow
-// .png 	.png 	mist

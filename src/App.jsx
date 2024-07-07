@@ -31,18 +31,17 @@ function App() {
     if (searchValue) {
       try {
         const response = await fetch(url);
-        const data = await response.json();
         if (!response.ok) {
           setNotFound(true);
           console.error("Fetch error: city not found");
         }
+        const data = await response.json();
         setWeatherResult(data);
       } catch (error) {
         setErrorMsg(true);
         console.error("Fetch error:", error);
       } finally {
         setIsLoad(false);
-        setSearchValue("");
       }
     }
   }

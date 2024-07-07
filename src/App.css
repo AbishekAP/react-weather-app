@@ -65,7 +65,7 @@ svg path {
 }
 
 svg {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #666666;
 }
 
@@ -98,8 +98,9 @@ main section article {
 }
 
 main section article .image {
-    height: 11rem;
+    height: 10rem;
     width: 100%;
+    padding: 0.5rem;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -145,6 +146,7 @@ main section article .lat-lon {
     justify-content: space-around;
     gap: 1rem;
     text-align: center;
+    font-size: 0.8rem;
 }
 
 main section article .others {
@@ -155,6 +157,7 @@ main section article .others {
     justify-content: space-around;
     text-align: center;
     color: #666666;
+    font-size: 1rem;
 }
 
 main section .notfound-container {
@@ -213,7 +216,7 @@ main section .internet-error svg path {
 .loader {
     width: 10rem;
     height: 5rem;
-    border-radius: 100px 100px 0 0;
+    border-radius: 10rem 10rem 0 0;
     position: relative;
     overflow: hidden;
 }
@@ -280,27 +283,37 @@ footer {
 
 @media(min-width:1440px) {
     html {
-        font-size: 120%;
+        font-size: 100%;
     }
 
     main section article {
-        min-width: 50%;
-        min-height: 50%;
+        min-width: 40%;
+        min-height: 40%;
+    }
+
+    .loader {
+        width: 10rem;
+        height: 3.5rem;
     }
 }
+@media(min-width:2000px) {
+    html {
+        font-size: 150%;
+    }
+}
+
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
     -webkit-text-fill-color: #000 !important;
-  }
-  
-  input:-moz-autofill {
+}
+
+input:-moz-autofill {
     box-shadow: 0 0 0 30px white inset !important;
     -moz-text-fill-color: #000 !important;
-  }
-  
-  input:-ms-autofill {
+}
+
+input:-ms-autofill {
     box-shadow: 0 0 0 30px white inset !important;
     -ms-text-fill-color: #000 !important;
-  }
-  
+}
