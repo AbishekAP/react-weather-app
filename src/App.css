@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.5px;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+    font-size: 75%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./assets/bg.jpg');
+    background-position: end;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        'header header header'
+        'main main main'
+        'footer footer footer'
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: .7fr 3fr .3fr;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+    border: 5px solid #eeeeee;
+    border-radius: 2rem;
+    outline: none;
+    background-color: #ffffff;
+}
+
+input {
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+}
+
+svg path {
+    color: #666666;
+}
+
+svg {
+    font-size: 1.2rem;
+    color: #666666;
+}
+
+main {
+    grid-area: main;
+}
+
+main section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+main section article {
+    width: 25rem;
+    min-height: 15rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+main section article .image {
+    height: 11rem;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main section article img {
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.1));
+}
+
+main section article .basic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+main section article .basic .cityname {
+    color: #ffe600;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+main section article .basic .temp {
+    font-size: 1.5rem;
+}
+
+main section article .basic h2 span {
+    color: #666666;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+main section article .lat-lon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    text-align: center;
+}
+
+main section article .others {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: #666666;
+}
+
+main section .notfound-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main section .notfound-msg {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #ffffff;
+}
+
+main section .notfound-container svg {
+    font-size: 5rem;
+}
+
+main section .notfound-container svg path {
+    color: #ffffff;
+}
+
+main section .internet-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main section .internet-error-msg {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #ffffff;
+}
+
+main section .internet-error svg {
+    font-size: 5rem;
+}
+
+main section .internet-error svg path {
+    color: #ffffff;
+}
+
+.loader-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.loader {
+    width: 10rem;
+    height: 5rem;
+    border-radius: 100px 100px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader:before {
+    content: "";
+    position: absolute;
+    inset: 0 0 -100%;
+    background:
+        radial-gradient(farthest-side, #ffd738 80%, #0000) left 70% top 20%/15px 15px,
+        radial-gradient(farthest-side, #020308 92%, #0000) left 65% bottom 19%/12px 12px,
+        radial-gradient(farthest-side, #ecfefe 92%, #0000) left 70% bottom 20%/15px 15px,
+        linear-gradient(#9eddfe 50%, #020308 0);
+    background-repeat: no-repeat;
+    animation: l5 2s infinite;
+}
+
+@keyframes l5 {
+
+    0%,
+    20% {
+        transform: rotate(0)
+    }
+
+    40%,
+    60% {
+        transform: rotate(.5turn)
+    }
+
+    80%,
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+main section .load-msg {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #ffffff;
+}
+
+footer {
+    grid-area: footer;
+    padding: .5rem;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media(min-width:768px) {
+    html {
+        font-size: 80%;
+    }
+
+    main section article {
+        min-width: 35rem;
+        min-height: 25rem;
+    }
+}
+
+@media(min-width:1440px) {
+    html {
+        font-size: 120%;
+    }
+
+    main section article {
+        min-width: 50%;
+        min-height: 50%;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+  }
+  
+  input:-moz-autofill {
+    box-shadow: 0 0 0 30px white inset !important;
+    -moz-text-fill-color: #000 !important;
+  }
+  
+  input:-ms-autofill {
+    box-shadow: 0 0 0 30px white inset !important;
+    -ms-text-fill-color: #000 !important;
+  }
+  
